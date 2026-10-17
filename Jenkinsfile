@@ -18,13 +18,10 @@ pipeline {
             steps { sh '.venv/bin/python -m pytest -v --junitxml=test-results.xml' }
             post { always { junit 'test-results.xml' } }
         }
-        stage('Deploy with Ansible') {
-            steps { sh 'ansible-playbook -i inventory.ini deploy.yml' }
-        }
     }
 
     post {
-        success { echo 'Pipeline succeeded: app deployed and health check passed.' }
+        success { echo 'Pipeline succeeded: all tests passed.' }
         failure { echo 'Pipeline failed. Check the console output.' }
     }
 }
