@@ -94,7 +94,13 @@ docker run -d -p 5000:5000 --name calorie-app calorie-estimator
 ## 3. Changes made (with commit details)
 After the first version of the website was uploaded, these five changes were made and committed one by one:
 
-<!-- CHANGES_TABLE -->
+| No. | Change | Files changed | Commit message | Commit |
+|-----|--------|---------------|----------------|--------|
+| 1 | Add How it works section to the page | templates/index.html | `Add How it works section to the page` | `42e6071` |
+| 2 | Show calories per serving in the result card | templates/index.html | `Show calories per serving in the result card` | `b55c9e0` |
+| 3 | Add /dishes API endpoint with a test | app.py, tests/test_app.py | `Add /dishes API endpoint with a test` | `42be363` |
+| 4 | Add customizable daily calorie goal | app.py, templates/index.html, tests/test_app.py | `Add customizable daily calorie goal` | `bf9cd37` |
+| 5 | Add timestamp to the downloaded report | app.py, tests/test_app.py | `Add generated_at timestamp to the downloaded report` | `313fa77` |
 
 Run `git log --oneline` to see the complete history, which is also shown in the screenshots below.
 
