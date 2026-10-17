@@ -92,3 +92,11 @@ def test_report_empty_plate_rejected():
 def test_report_invalid_item_rejected():
     bad = [{"dish": "Pizza", "size": "Regular", "extra": "None", "quantity": 1}]
     assert client.post("/report", json={"items": bad}).status_code == 400
+
+
+def test_dishes_endpoint():
+    res = client.get("/dishes")
+    assert res.status_code == 200
+    names = [d["name"] for d in res.get_json()]
+    assert len(names) == 8
+    assert "Misal Pav" in names

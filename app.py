@@ -83,6 +83,12 @@ def report():
                     headers={"Content-Disposition": "attachment; filename=plate-report.json"})
 
 
+@app.route("/dishes")
+def dishes():
+    """List the available dishes and what one serving means."""
+    return jsonify([{"name": n, "serving": v[3]} for n, v in DISHES.items()])
+
+
 @app.route("/health")
 def health():
     return jsonify({"status": "ok"})
