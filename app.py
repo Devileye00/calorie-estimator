@@ -42,13 +42,21 @@ def home():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    item, error = parse_item(request.get_json(silent=True) or {})
+    data = request.get_json(silent=True) or {}
+    item, error = parse_item(data)
     if error:
         return jsonify({"error": error}), 400
+    try:
+        goal = int(data.get("daily_goal", DAILY_KCAL))
+    except (TypeError, ValueError):
+        return jsonify({"error": "Daily goal must be a whole number."}), 400
+    if not 1000 <= goal <= 5000:
+        return jsonify({"error": "Daily goal must be between 1000 and 5000 kcal."}), 400
     result = predict_nutrition(model, *item)
     result.update({
         "dish": item[0],
-        "daily_percent": round(result["total"] / DAILY_KCAL * 100, 1),
+        "daily_goal": goal,
+        "daily_percent": round(result["total"] / goal * 100, 1),
         "label": meal_label(result["total"]),
     })
     return jsonify(result)

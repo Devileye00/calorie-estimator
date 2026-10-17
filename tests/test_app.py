@@ -100,3 +100,17 @@ def test_dishes_endpoint():
     names = [d["name"] for d in res.get_json()]
     assert len(names) == 8
     assert "Misal Pav" in names
+
+
+def test_custom_daily_goal_changes_percent():
+    base = post().get_json()
+    res = client.post("/predict", json={"dish": "Vada Pav", "size": "Regular", "extra": "None",
+                                        "quantity": 1, "daily_goal": 1000})
+    assert res.status_code == 200
+    assert res.get_json()["daily_percent"] > base["daily_percent"]
+
+
+def test_invalid_daily_goal_rejected():
+    res = client.post("/predict", json={"dish": "Vada Pav", "size": "Regular", "extra": "None",
+                                        "quantity": 1, "daily_goal": 50})
+    assert res.status_code == 400
