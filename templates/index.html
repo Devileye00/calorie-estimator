@@ -101,6 +101,10 @@
   .prow { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
   .pbtn { padding: 11px 22px; border: 0; border-radius: 99px; background: var(--chilli); color: #fff; font: 700 .95rem "Trebuchet MS", sans-serif; cursor: pointer; }
   .pbtn.ghost { background: #fff1d6; color: var(--chilli); }
+  .how { grid-column: 1 / -1; }
+  .how h2 { margin: 0 0 10px; font: 700 1.5rem Palatino, Georgia, serif; }
+  .how ol { margin: 0; padding-left: 20px; }
+  .how li { margin-bottom: 6px; }
   footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 0 20px 36px; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
@@ -196,6 +200,14 @@
         <button type="button" class="pbtn ghost" id="clr">Clear plate</button>
       </div>
     </div>
+  </section>
+  <section class="card how" aria-label="How it works">
+    <h2>How it works</h2>
+    <ol>
+      <li>You choose a dish, portion size, extra oil or butter and the number of servings.</li>
+      <li>A RandomForest model trained on typical nutrition values predicts the protein, carbs and fat for your meal.</li>
+      <li>Calories are calculated as 4 x protein + 4 x carbs + 9 x fat.</li>
+    </ol>
   </section>
 </main>
 <footer>Built with Flask and scikit-learn</footer>
