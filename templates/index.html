@@ -105,6 +105,7 @@
   .how h2 { margin: 0 0 10px; font: 700 1.5rem Palatino, Georgia, serif; }
   .how ol { margin: 0; padding-left: 20px; }
   .how li { margin-bottom: 6px; }
+  .per { margin: 10px 0 0; color: var(--muted); font-size: .9rem; }
   footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 0 20px 36px; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
@@ -169,6 +170,7 @@
       </div>
     </div>
     <span class="tag" id="label" data-level="light">Light snack</span>
+    <p class="per" id="per"></p>
     <div class="facts">
       <div class="fact"><strong id="percent">0%</strong><span>of a 2000 kcal day</span></div>
       <div class="fact"><strong id="walk">0 min</strong><span>brisk walk to burn it</span></div>
@@ -255,6 +257,7 @@
       tag.textContent = data.label;
       tag.dataset.level = data.label.startsWith("Light") ? "light" : data.label.startsWith("Moderate") ? "moderate" : "heavy";
       document.getElementById("percent").textContent = data.daily_percent + "%";
+      document.getElementById("per").textContent = data.per_serving + " kcal per serving";
       document.getElementById("protein").textContent = data.protein + " g";
       document.getElementById("carbs").textContent = data.carbs + " g";
       document.getElementById("fat").textContent = data.fat + " g";
