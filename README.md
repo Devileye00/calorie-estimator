@@ -147,7 +147,7 @@ Jenkins is used for Continuous Integration. Every new commit on GitHub is checke
 ### Result
 The first two builds failed because the first `Jenkinsfile` used Linux `sh` commands, which do not exist on Windows. After switching to Windows `bat` commands the pipeline succeeded (build #3), and every test passed. A push to GitHub now triggers a new build automatically.
 
-## 6. Screenshots (proof)
+## 6. Screenshots (Proof)
 
 **Figure 1: Home page of the website**
 
@@ -163,27 +163,27 @@ The first two builds failed because the first `Jenkinsfile` used Linux `sh` comm
 
 **Figure 4: Jenkins job**
 
-![Git log](docs/screenshots/07-git-log.png)
+![Jenkins job](docs/screenshots/04-jenkins-job.png)
 
 **Figure 5: Jenkins build**
 
-![GitHub repository](docs/screenshots/08-github-repo.png)
+![Jenkins build](docs/screenshots/05-jenkins-build.png)
 
 **Figure 6: Jenkins console output**
 
-![GitHub commits](docs/screenshots/09-github-commits.png)
+![Jenkins console](docs/screenshots/06-jenkins-console.png)
 
-**Figure 7: GitHub repository with project files**
+**Figure 7: GitHub repository**
 
-![Jenkins job](docs/screenshots/04-jenkins-job.png)
+![GitHub repository](docs/screenshots/07-github-repo.png)
 
 **Figure 8: GitHub commit history**
 
-![Jenkins console](docs/screenshots/05-jenkins-console.png)
+![GitHub commits](docs/screenshots/08-github-commits.png)
 
 **Figure 9: Docker evidence**
 
-![Docker container](docs/screenshots/06-docker.png)
+![Docker evidence](docs/screenshots/09-docker.png)
 
 ## Data note
 Vada Pav values follow the FatSecret database (1 piece, 140 g). The other dishes use typical published values for a standard serving. Real calories vary with recipe and portion, so results are estimates.
