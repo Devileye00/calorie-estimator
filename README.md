@@ -161,27 +161,27 @@ The first two builds failed because the first `Jenkinsfile` used Linux `sh` comm
 
 ![My Plate](docs/screenshots/03-my-plate.png)
 
-**Figure 4: Git commit history (`git log --oneline`)**
+**Figure 4: Jenkins job**
 
 ![Git log](docs/screenshots/07-git-log.png)
 
-**Figure 5: GitHub repository with all project files**
+**Figure 5: Jenkins build**
 
 ![GitHub repository](docs/screenshots/08-github-repo.png)
 
-**Figure 6: Commit history on GitHub**
+**Figure 6: Jenkins console output**
 
 ![GitHub commits](docs/screenshots/09-github-commits.png)
 
-**Figure 7: Jenkins job with successful builds**
+**Figure 7: GitHub repository with project files**
 
 ![Jenkins job](docs/screenshots/04-jenkins-job.png)
 
-**Figure 8: Jenkins console output with all tests passing**
+**Figure 8: GitHub commit history**
 
 ![Jenkins console](docs/screenshots/05-jenkins-console.png)
 
-**Figure 9: Docker container running the website**
+**Figure 9: Docker evidence**
 
 ![Docker container](docs/screenshots/06-docker.png)
 
