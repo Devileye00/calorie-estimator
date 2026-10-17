@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 from flask import Flask, Response, jsonify, render_template, request
 
@@ -85,6 +86,7 @@ def report():
     for key in ("protein_g", "carbs_g", "fat_g"):
         totals[key] = round(totals[key], 1)
     body = json.dumps({"app": "Kolhapur Street Food Calorie Estimator",
+                       "generated_at": datetime.now().isoformat(timespec="seconds"),
                        "items": rows, "totals": totals,
                        "daily_percent": round(totals["kcal"] / DAILY_KCAL * 100, 1)}, indent=2)
     return Response(body, mimetype="application/json",

@@ -114,3 +114,9 @@ def test_invalid_daily_goal_rejected():
     res = client.post("/predict", json={"dish": "Vada Pav", "size": "Regular", "extra": "None",
                                         "quantity": 1, "daily_goal": 50})
     assert res.status_code == 400
+
+
+def test_report_has_timestamp():
+    items = [{"dish": "Vada Pav", "size": "Regular", "extra": "None", "quantity": 1}]
+    body = client.post("/report", json={"items": items}).get_json()
+    assert "generated_at" in body
